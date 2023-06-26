@@ -89,8 +89,8 @@ export class App extends Component {
           <Button onClick={this.fetchImages}>Load More</Button>
         )}
         {showModal && (
-          <Modal onClose={this.handleCloseModal}>
-            <img src={selectedImage.largeImageURL} alt={selectedImage.id} />
+          <Modal onClose={this.handleCloseModal} selectedImage={selectedImage}>
+            {selectedImage && <img src={selectedImage.webformatURL} alt={selectedImage.id} />}
           </Modal>
         )}
       </div>

@@ -2,7 +2,7 @@
 import css from './modal.module.css'
 
 
-export const Modal = ({ onClose, children }) => {
+export const Modal = ({ onClose, selectedImage, children }) => {
     const handleClose = () => {
         onClose();
       };
@@ -13,6 +13,9 @@ export const Modal = ({ onClose, children }) => {
             <button className="close-button" onClick={handleClose}>
               X
             </button>
+            {/* {selectedImage && (
+              <img src={selectedImage.largeformatURL} alt={selectedImage.id} />
+            )} */}
             {children}
           </div>
         </div>
