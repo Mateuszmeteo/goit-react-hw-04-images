@@ -90,7 +90,7 @@ export class App extends Component {
         )}
         {showModal && (
           <Modal onClose={this.handleCloseModal} selectedImage={selectedImage}>
-            {selectedImage && <img src={selectedImage.webformatURL} alt={selectedImage.id} />}
+            {selectedImage && <img src={selectedImage.largeformatURL} alt={selectedImage.id} />}
           </Modal>
         )}
       </div>
