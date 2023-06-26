@@ -1,5 +1,5 @@
 
-
+import css from './searchbar.module.css'
 
 export const Searchbar = ({ onSubmit }) => {
     const handleSubmit = (e) => {
@@ -9,15 +9,15 @@ export const Searchbar = ({ onSubmit }) => {
     };
   
     return (
-      <header className="searchbar">
-        <form className="form" onSubmit={handleSubmit}>
-          <button type="submit" className="button">
+      <header className={css.searchbar}>
+        <form className={css.searchForm} onSubmit={handleSubmit}>
+          <button type="submit" className={css.searchFormButton}>
             <span className="button-label">Search</span>
           </button>
   
           <input
             id="searchInput"
-            className="input"
+            className={css.searchFormInput}
             type="text"
             autoComplete="off"
             autoFocus

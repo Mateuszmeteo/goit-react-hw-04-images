@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios"
+import css from './app.module.css'
 
 import { Searchbar } from "./Searchbar/Searchbar";
 import { ImageGallery } from "./ImageGallery/ImageGallery";
@@ -29,8 +30,14 @@ export class App extends Component {
     this.fetchImages()
   }
 
+  // handleSubmit = (searchQuery) => {
+  //   this.setState({ searchQuery, page: 1, images: [] }, this.fetchImages);
+  // };
+
   handleSubmit = (searchQuery) => {
-    this.setState({ searchQuery, page: 1, images: [] }, this.fetchImages);
+    this.setState({ searchQuery, page: 1, images: [] }, () => {
+      this.fetchImages();
+    });
   };
 
   fetchImages = async () => {
@@ -71,7 +78,7 @@ export class App extends Component {
     const { images, loading, showModal, selectedImage } = this.state;
 
     return (
-      <div>
+      <div className={css.app}>
         <Searchbar onSubmit={this.handleSubmit} />
         {loading && <Loader />}
         <ImageGallery 
@@ -95,15 +102,15 @@ export class App extends Component {
 
 
 ///======================///////////============================//
-        {/* <ImageGallery>
-          {images.map((image) => (
-            <ImageGalleryItem
-              key={image.id}
-              image={image}
-              onClick={this.handleImageClick}
-            />
-          ))}
-        </ImageGallery> */}
+       // {/* <ImageGallery>
+         // {images.map((image) => (
+         //   <ImageGalleryItem
+          //    key={image.id}
+          //    image={image}
+          //    onClick={this.handleImageClick}
+         //   />
+        //  ))}
+      //  </ImageGallery> */}//
 
 
 

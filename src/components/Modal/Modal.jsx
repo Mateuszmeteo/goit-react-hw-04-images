@@ -1,4 +1,5 @@
 
+import css from './modal.module.css'
 
 
 export const Modal = ({ onClose, children }) => {
@@ -7,8 +8,8 @@ export const Modal = ({ onClose, children }) => {
       };
     
       return (
-        <div className="modal">
-          <div className="modal-content">
+        <div className={css.overlay}>
+          <div className={css.modal}>
             <button className="close-button" onClick={handleClose}>
               X
             </button>
