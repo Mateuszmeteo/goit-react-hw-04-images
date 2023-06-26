@@ -48,13 +48,13 @@ export class App extends Component {
     this.setState({loading: true})
 
     try {
-      const response = axios.get(URL)
-      const newImages = (await response).data.hits.map((image) => ({
+      const response = await axios.get(URL)
+      const newImages = response.data.hits.map((image) => ({
         id: image.id,
         webformatURL: image.webformatURL,
         largeformatURL: image.largeformatURL
       }))
-      this.state((prevState) => ({
+      this.setState((prevState) => ({
         images: [...prevState.images, ...newImages],
         page: prevState.page + 1,
       }))
