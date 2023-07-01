@@ -26,7 +26,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchImages()
-  }, [])
+  }, )
 
   const handleSubmit = (searchQuery) => {
     setSearchQuery(searchQuery)
